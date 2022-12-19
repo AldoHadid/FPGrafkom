@@ -70,10 +70,10 @@ createCube({w: .2, h: 1.5, d: 1}, end_position, .4)
 
 
 class Player {
-    constructor(name = "Player", radius = .25, posY = 0, color = 0xffffff){
-        const geometry = new THREE.SphereGeometry( radius, 100, 100 )
-        const material = new THREE.MeshBasicMaterial( { color } )
-        const player = new THREE.Mesh( geometry, material )
+    constructor(name , posY , color){
+        const geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2)
+        const material = new THREE.MeshBasicMaterial({ color })
+        const player = new THREE.Mesh(geometry, material)
         scene.add( player )
         player.position.x = start_position - .4
         player.position.z = 1
@@ -139,8 +139,8 @@ async function delay(ms){
     return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-const player1 = new Player("Player 1", .25, .3, 0xD1FFC6)
-const player2 = new Player("Player 2", .25, -.3, 0xFFCFD2)
+const player1 = new Player("Player 1", .3, 0xD1FFC6)
+const player2 = new Player("Player 2", -.3, 0xFFCFD2)
 
 const players = [
     {
