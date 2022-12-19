@@ -138,7 +138,7 @@ async function delay(ms){
     return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-const player1 = new Player("Player 1", .3, 0xffff00)
+const player1 = new Player("Player 1", .3, 0xD1FFC6)
 const player2 = new Player("Player 2", -.3, 0xFFCFD2)
 
 const players = [
