@@ -30,7 +30,7 @@ let SAFE_PLAYERS = 0
 const startBtn = document.querySelector('.start-btn')
 
 //musics
-const bgMusic = new Audio('./music/bg.mp3')
+const bgMusic = new Audio('./music/goyangdumang.mp3')
 bgMusic.loop = true
 const winMusic = new Audio('./music/win.mp3')
 const loseMusic = new Audio('./music/lose.mp3')
@@ -42,7 +42,33 @@ loader.load( './model/scene.gltf', function ( gltf ){
     gltf.scene.scale.set(0.4, 0.4, 0.4)
     startBtn.innerText = "start"
 })
+loader.load( './squid_game_guard/scene.gltf', function ( gltf ){
+    scene.add( gltf.scene )
+    pink = gltf.scene
+    gltf.scene.position.set(3, -1, 0)
+    gltf.scene.scale.set(0.03, 0.03, 0.03)
+})
 
+loader.load( './squid_game_guard/scene.gltf', function ( gltf ){
+    scene.add( gltf.scene )
+    pink = gltf.scene
+    gltf.scene.position.set(5, -1, 0)
+    gltf.scene.scale.set(0.03, 0.03, 0.03)
+})
+
+loader.load( './squid_game_guard/scene.gltf', function ( gltf ){
+    scene.add( gltf.scene )
+    pink = gltf.scene
+    gltf.scene.position.set(-3, -1, 0)
+    gltf.scene.scale.set(0.03, 0.03, 0.03)
+})
+
+loader.load( './squid_game_guard/scene.gltf', function ( gltf ){
+    scene.add( gltf.scene )
+    pink = gltf.scene
+    gltf.scene.position.set(-5, -1, 0)
+    gltf.scene.scale.set(0.03, 0.03, 0.03)
+})
 function lookBackward(){
     gsap.fromTo(doll.rotation, { duration: .45, y: 0}, { duration: .45, y: 3.15})
     setTimeout(() => dallFacingBack = true, 150)
@@ -64,7 +90,7 @@ function createCube(size, posX, rotY = 0, color = 0xfbc851){
 }
 
 //Creating runway
-createCube({w: start_position * 2 - .18, h: .2, d: 1}, 0, 0, 0xe5a716).position.y = -.8
+createCube({w: start_position * 2 + .21, h: 1.5, d: 1}, 0, 0, 0xe5a716).position.z = -1
 createCube({w: .2, h: 1.5, d: 1}, start_position, -.4)
 createCube({w: .2, h: 1.5, d: 1}, end_position, .4)
 
@@ -105,7 +131,7 @@ class Player {
             DEAD_PLAYERS++
             loseMusic.play()
             if(DEAD_PLAYERS == players.length){
-                text.innerText = "Everyone lost!!!"
+                text.innerText = "Semua Kalah!!!"
                 gameStat = "ended"
             }
             if(DEAD_PLAYERS + SAFE_PLAYERS == players.length){
@@ -113,13 +139,13 @@ class Player {
             }
         }
         if(this.playerInfo.positionX < end_position + .7){
-            text.innerText = this.playerInfo.name + " is safe!!!"
+            text.innerText = this.playerInfo.name + " amannn!!!"
             this.playerInfo.isDead = true
             this.stop()
             SAFE_PLAYERS++
             winMusic.play()
             if(SAFE_PLAYERS == players.length){
-                text.innerText = "Everyone is safe!!!"
+                text.innerText = "Semua Amannnn!!!"
                 gameStat = "ended"
             }
             if(DEAD_PLAYERS + SAFE_PLAYERS == players.length){
@@ -179,7 +205,7 @@ function start(){
     gsap.to(progressBar.scale, {duration: TIME_LIMIT, x: 0, ease: "none"})
     setTimeout(() => {
         if(gameStat != "ended"){
-            text.innerText = "Time Out!!!"
+            text.innerText = "WAKTU HABISS!!!"
             loseMusic.play()
             gameStat = "ended"
         }
