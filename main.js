@@ -44,11 +44,12 @@ loader.load( './model/scene.gltf', function ( gltf ){
 })
 
 function lookBackward(){
-    gsap.to(doll.rotation, {duration: .45, y: -3.15})
+    gsap.fromTo(doll.rotation, { duration: .45, y: 0}, { duration: .45, y: 3.15})
     setTimeout(() => dallFacingBack = true, 150)
 }
+
 function lookForward(){
-    gsap.to(doll.rotation, {duration: .45, y: 0})
+    gsap.fromTo(doll.rotation, { duration: .45, y: -3.15}, { duration: .45, y: 0})
     setTimeout(() => dallFacingBack = false, 450)
 }
 
@@ -192,6 +193,7 @@ async function startDall(){
    await delay((Math.random() * 1500) + 1500)
    lookForward()
    await delay((Math.random() * 750) + 750)
+//    spinBackward()
    startDall()
 }
 
