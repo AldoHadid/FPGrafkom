@@ -1,0 +1,11 @@
+Model Information:
+* title:	Squid Game Guard
+* source:	https://sketchfab.com/3d-models/squid-game-guard-2cffd1685e794ca087b0f2774cf11984
+* author:	xRUN (https://sketchfab.com/XRUNFF)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Squid Game Guard" (https://sketchfab.com/3d-models/squid-game-guard-2cffd1685e794ca087b0f2774cf11984) by xRUN (https://sketchfab.com/XRUNFF) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
