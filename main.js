@@ -70,13 +70,13 @@ loader.load( './squid_game_guard/scene.gltf', function ( gltf ){
     gltf.scene.scale.set(0.03, 0.03, 0.03)
 })
 function lookBackward(){
-createCube({w: start_position * 2 - .18, h: .2, d: 1}, 0, 0, 0x04ff00).position.y = -.8
+    createCube({w: start_position * 2 + .21, h: 1.5, d: 1}, 0, 0, 0x04ff00).position.z = -1
     gsap.fromTo(doll.rotation, { duration: .45, y: 0}, { duration: .45, y: 3.15})
     setTimeout(() => dallFacingBack = true, 150)
 }
 //
 function lookForward(){
-    	createCube({w: start_position * 2 - .18, h: .2, d: 1}, 0, 0,0xff0000 ).position.y = -.8
+    createCube({w: start_position * 2 + .18, h: 1.5, d: 1}, 0, 0, 0xff0000 ).position.z = -1
     gsap.fromTo(doll.rotation, { duration: .45, y: -3.15}, { duration: .45, y: 0})
     setTimeout(() => dallFacingBack = false, 450)
 }
@@ -92,7 +92,7 @@ function createCube(size, posX, rotY = 0, color = 0xfbc851){
 }
 
 //Creating runway
-createCube({w: start_position * 2 - .18, h: .2, d: 1}, 0, 0, 0xe5a716).position.y = -.8
+createCube({w: start_position * 2 + .21, h: 1.5, d: 1}, 0, 0, 0xe5a716).position.z = -1
 createCube({w: .2, h: 1.5, d: 1}, start_position, -.4)
 createCube({w: .2, h: 1.5, d: 1}, end_position, .4)
 
