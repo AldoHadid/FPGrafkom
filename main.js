@@ -90,7 +90,7 @@ function createCube(size, posX, rotY = 0, color = 0xfbc851){
 }
 
 //Creating runway
-createCube({w: start_position * 2 + .21, h: 1.5, d: 1}, 0, 0, 0xe5a716).position.z = -1
+createCube({w: start_position * 2 - .18, h: .2, d: 1}, 0, 0, 0xe5a716).position.y = -.8
 createCube({w: .2, h: 1.5, d: 1}, start_position, -.4)
 createCube({w: .2, h: 1.5, d: 1}, end_position, .4)
 
