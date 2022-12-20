@@ -70,11 +70,13 @@ loader.load( './squid_game_guard/scene.gltf', function ( gltf ){
     gltf.scene.scale.set(0.03, 0.03, 0.03)
 })
 function lookBackward(){
+createCube({w: start_position * 2 - .18, h: .2, d: 1}, 0, 0, 0x04ff00).position.y = -.8
     gsap.fromTo(doll.rotation, { duration: .45, y: 0}, { duration: .45, y: 3.15})
     setTimeout(() => dallFacingBack = true, 150)
 }
-
+//
 function lookForward(){
+    	createCube({w: start_position * 2 - .18, h: .2, d: 1}, 0, 0,0xff0000 ).position.y = -.8
     gsap.fromTo(doll.rotation, { duration: .45, y: -3.15}, { duration: .45, y: 0})
     setTimeout(() => dallFacingBack = false, 450)
 }
